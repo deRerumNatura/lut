@@ -15,7 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.views.static import serve
+
+from posts.views import PostsListView, PostsDetailView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', PostsListView.as_view()),
+    url(r'^posts/(?P<pk>\d+)/$', PostsDetailView.as_view()),
 ]
+
+if settings.DEBUG:
+    urlpatterns += [
+        url(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT
+        })
+    ]

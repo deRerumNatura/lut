@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% for obj in object_list %}
+        <div>
+            <img src="media/{{obj.photo}}" alt="" style="width: 40vw;">
+            {{obj.description}}
+            {{obj.updated}}
+        </div>
+    {% endfor %}
+{% endblock %}

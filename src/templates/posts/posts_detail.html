@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div>
+            <img src="../../media/{{object.photo}}" alt="" style="width: 40vw;">
+            {{object.description}}
+            {{object.updated}}
+        </div>
+{% endblock %}
