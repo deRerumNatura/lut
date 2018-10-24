@@ -1,0 +1,60 @@
+a,  a:active, a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    width: 100vw;
+}
+
+nav ul {
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    justify-content: space-around;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+main div.list-view {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(18, 169, 180, 0.7);
+}
+
+main .list-view .lv-item-text {
+    width: 26vw;
+    position: absolute;
+    visibility: hidden;
+}
+
+main .list-view:hover .lv-item-text {
+    width: 26vw;
+    position: absolute;
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+main div.list-view img {
+    width: 26vw;
+    position: relative;
+}
+
+main div.list-view:hover img {
+    width: 26vw;
+    position: relative;
+    z-index: -1;
+}

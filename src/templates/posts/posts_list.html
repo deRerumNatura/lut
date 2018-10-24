@@ -3,10 +3,14 @@
 {% block content %}
 
     {% for obj in object_list %}
-        <div>
-            <img src="media/{{obj.photo}}" alt="" style="width: 40vw;">
-            {{obj.description}}
-            {{obj.updated}}
-        </div>
+        <a href="posts/{{obj.id}}">
+            <div class="list-view">
+                <img src="../media/{{obj.photo}}" alt="">
+                <div class="lv-item-text">
+                     {{obj.description}}
+                     {{obj.updated}}
+                </div>
+            </div>
+        </a>
     {% endfor %}
 {% endblock %}
