@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+    <div class="add-button">
+        <a href="/posts/create/" class="btn btn-primary">add</a>
+    </div>
     {% for obj in object_list %}
         <a href="posts/{{obj.id}}">
             <div class="list-view">

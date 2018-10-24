@@ -18,12 +18,13 @@ from django.contrib import admin
 from django.conf import settings
 from django.views.static import serve
 
-from posts.views import PostsListView, PostsDetailView
+from posts.views import PostsListView, PostsDetailView, PostsCreateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', PostsListView.as_view()),
     url(r'^posts/(?P<pk>\d+)/$', PostsDetailView.as_view()),
+    url(r'^posts/create/$', PostsCreateView.as_view()),
 ]
 
 if settings.DEBUG:
