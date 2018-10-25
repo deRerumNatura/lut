@@ -1,7 +1,9 @@
 from django.db import models
+from django.conf import settings
 
 
 class Posts(models.Model):
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True)
     photo = models.ImageField(blank=True, null=True, upload_to = 'covers/  ')
     description = models.CharField(max_length=120)
     timestamp = models.DateTimeField(auto_now_add=True)

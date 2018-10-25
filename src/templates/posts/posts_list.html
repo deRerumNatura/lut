@@ -2,17 +2,19 @@
 
 {% block content %}
     <div class="add-button">
-        <a href="/posts/create/" class="btn btn-primary">add</a>
+        <a href="/posts/create/" class="btn btn-primary"><h1>ADD</h1></a>
     </div>
-    {% for obj in object_list %}
-        <a href="posts/{{obj.id}}">
-            <div class="list-view">
-                <img src="../media/{{obj.photo}}" alt="">
-                <div class="lv-item-text">
-                     {{obj.description}}
-                     {{obj.updated}}
+    <div class="posts-list">
+        {% for obj in object_list %}
+            <a href="posts/{{obj.id}}">
+                <div class="list-view">
+                    <img src="../media/{{obj.photo}}" alt="">
+                    <div class="lv-item-text">
+                         {{obj.description}}
+                         {{obj.updated}}
+                    </div>
                 </div>
-            </div>
-        </a>
-    {% endfor %}
+            </a>
+        {% endfor %}
+    </div>
 {% endblock %}

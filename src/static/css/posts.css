@@ -25,21 +25,47 @@ nav ul {
 main {
     display: flex;
     justify-content: space-around;
-}
-
-main div.list-view {
-    display: flex;
     flex-direction: column;
-    background-color: rgba(18, 169, 180, 0.7);
 }
 
-main .list-view .lv-item-text {
+main .posts-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+main .add-button {
+    display: flex;
+    justify-content: center;
+    margin: 5vh 0 5vh 0;
+}
+
+main .add-button:hover {
+    display: flex;
+    justify-content: center;
+    background-color: #5b80b2;
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+main .add-button:hover a {
+    color: #fff;
+}
+
+main .posts-list a {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(18, 169, 180, 0.7);
+    margin-bottom: 12vh;
+}
+
+main .posts-list .list-view .lv-item-text {
     width: 26vw;
     position: absolute;
     visibility: hidden;
 }
 
-main .list-view:hover .lv-item-text {
+main .posts-list .list-view:hover .lv-item-text {
     width: 26vw;
     position: absolute;
     visibility: visible;
@@ -48,12 +74,12 @@ main .list-view:hover .lv-item-text {
     margin-top: 5vh;
 }
 
-main div.list-view img {
+main .posts-list div.list-view img {
     width: 26vw;
     position: relative;
 }
 
-main div.list-view:hover img {
+main .posts-list div.list-view:hover img {
     width: 26vw;
     position: relative;
     z-index: -1;
