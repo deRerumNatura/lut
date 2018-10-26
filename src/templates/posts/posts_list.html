@@ -6,6 +6,7 @@
     </div>
     <div class="posts-list">
         {% for obj in object_list %}
+            <p>{{ obj.likes_set.all.count }}</p>
             <a href="posts/{{obj.id}}">
                 <div class="list-view">
                     <img src="../media/{{obj.photo}}" alt="">

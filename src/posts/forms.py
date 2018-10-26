@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Posts
+from .models import Posts, Likes
 
 
 class PostForm(forms.ModelForm):
