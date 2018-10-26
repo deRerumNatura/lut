@@ -1,8 +1,18 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
-from .models import Posts
+from .models import Posts, Likes
 from .forms import PostForm
+
+
+def like(request):
+    post_to_like = Posts.objects.filter(id=request.POST['post_id']).get()
+    is_liked = Likes.objects.filter(author=request.user, post_id=post_to_like)
+
+    if not is_liked:
+        Likes.objects.create(author=request.user, post=post_to_like)
+
+    return redirect('/')
 
 
 class PostsListView(ListView):

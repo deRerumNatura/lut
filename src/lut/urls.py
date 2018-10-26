@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.views.static import serve
 
-from posts.views import PostsListView, PostsDetailView, PostsCreateView, PostUpdateView
+from posts.views import PostsListView, PostsDetailView, PostsCreateView, PostUpdateView, like
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^posts/(?P<pk>\d+)/$', PostsDetailView.as_view()),
     url(r'^posts/create/$', PostsCreateView.as_view()),
     url(r'^posts/(?P<pk>\d+)/edit/$', PostUpdateView.as_view()),
+    url(r'^like/$', like   ),
 ]
 
 if settings.DEBUG:
